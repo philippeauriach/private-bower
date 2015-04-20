@@ -96,7 +96,8 @@ Must be a valid JSON
             "host": "localhost",
             "port": 6789,
             "publicAccessURL" : null,
-            "refreshTimeout": 10
+            "refreshTimeout": 10,
+            "bufferSize": 200 * 1024
         },
         "svn": {
             "enabled": false,
@@ -104,7 +105,8 @@ Must be a valid JSON
             "host": "localhost",
             "port": 7891,
             "publicAccessURL" : null,
-            "refreshTimeout": 10
+            "refreshTimeout": 10,
+            "bufferSize": 200 * 1024
         }
     },
     "proxySettings" : {
@@ -141,6 +143,7 @@ Must be a valid JSON
 | repositoryCache.(svn, git).publicAccessURL | Public address to access repository cache (useful if repository is behind an apache) | null                                  |
 | repositoryCache.(svn, git).cacheDirectory  | Directory where the public repository cache will save repositories                   | ./svnRepoCache, ./gitRepoCache        |
 | repositoryCache.(svn, git).refreshTimeout  | Time to wai between repository cache refresh (minutes)                               | 10 minutes                            |
+| repositoryCache.(svn, git).bufferSize      | Size of maxBuffer for the exec command                                               | 200 * 1024                            |
 | repositoryCache.(svn, git).parameters.X    | Custom parameters for git-daemon and svnserve                                        | undefined                             |
 | proxySettings.enabled                      | Enable the proxy, use the proxy to call the bower remote repo                        | false                                 |
 | proxySettings.host                         | Proxy host                                                                           | proxy                                 |
